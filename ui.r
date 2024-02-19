@@ -32,6 +32,11 @@ shinyUI(fluidPage(
         sliderInput("conflevp", HTML("Conf. Level (1- &alpha;)"), min = 0.5, max = 0.99, value = 0.95, step = .01, width = "150px"),
         uiOutput("pnullhypo", width = "300px"), uiOutput("palthypo", width = "50px"),
         uiOutput("fctpptn1", width = "300px"), uiOutput("fctpptn2", width = "300px"),
+      ),
+      conditionalPanel(
+        'input.Panel === "KMeans"',
+        uiOutput("kmeansVar1", width = "300px"),uiOutput("kmeansVar2", width = "300px"),
+        uiOutput("kmeansClusters", width = "300px"),
       )
     ),
     mainPanel(
@@ -57,6 +62,11 @@ shinyUI(fluidPage(
           title = "One + Sample",
           fluidRow(column(12, plotOutput("oneplussamtst.plt", height = 600, width = 600))),
           fluidRow(verbatimTextOutput("oneplussamtst"))
+        ),
+        tabPanel(
+          title = "KMeans",
+          fluidRow(column(12, plotOutput("plot1", height = 600, width = 600)))
+          #fluidRow(verbatimTextOutput("oneplussamtst"))
         )
       )
     )

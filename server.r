@@ -878,4 +878,35 @@ shinyServer(function(input, output, clientData, session) {
     p2 <- p2 + labs(title = values$method, x = paste0(values$statName, " statistic"), y = "Probability Density") + theme(plot.title = element_text(hjust = 0.5))
     p2
   })
+  
+  ###KMEANS
+  
+  output$kmeansVar1 <- renderUI({
+    selectizeInput("kmeansVar", "Variable 1", choices = names(data()))
+  })
+  output$kmeansVar2 <- renderUI({
+    selectizeInput("oneplusvar2", "Variable 2", choices = names(data())[-which(names(data()) == input$oneplusvar1)], multiple = FALSE)
+  })
+  output$kmeansClusters <- renderUI({
+    if (is.null(ncol(data()))) {
+      return()
+    }
+    if (is.numeric(data()[, input$var1]) | is.numeric(data()[, input$var2])) {
+      sliderInput("clusters", "Cluster Count", min = 1, max = 10, value = 0.5, step = 1, width = "150px")
+    }
+  })
+  
+  #Does not work yet
+  output$plot1 <- renderPlot({
+      palette(c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3",
+                "#FF7F00", "#FFFF33", "#A65628", "#F781BF", "#999999"))
+      
+      par(mar = c(5.1, 4.1, 0, 1))
+      plot(selectedData(),
+           col = clusters()$cluster,
+           pch = 20, cex = 3)
+      points(clusters()$centers, pch = 4, cex = 4, lwd = 4)
+    })
+  
+  
 })
