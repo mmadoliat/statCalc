@@ -1,0 +1,8 @@
+'State','Income Median Household','Poverty %'
+'Colorado',57184,11.2
+'Kansas',50174,11.3
+'Missouri',46847,13.5
+'Nebraska',49731,10.8
+'New Mexico',43719,17
+'Oklahoma',42836,15.7
+'Wyoming',54735,9.5

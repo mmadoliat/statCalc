@@ -1,0 +1,11 @@
+'Cause of Death','Number (x10,000)'
+'Alzheimer''s',7.2
+'Chronic Resp. Dis.',12.5
+'Diabetes',7.2
+'Heart Disease',63.2
+'Influenza/Pneumonia',5.6
+'Malignant Neoplasms',56
+'Accidents',12.2
+'Nephritis/Nephrosis',4.5
+'Septicemia',3.4
+'Stroke',13.7

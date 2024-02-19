@@ -1,0 +1,17 @@
+'Manu','Model','Gas','Cost','Fillup','Tank'
+'Buick','Enclave','Reg.',2.51,37.82,22
+'Chevrolet','Trailblazer','Reg.',2.98,37.82,22
+'Chrysler','Aspen','Reg.',3.18,46.41,27
+'Dodge','Durango','Reg.',3.18,46.41,27
+'Ford','Escape','Reg.',2.39,28.36,16.5
+'GMC','Envoy','Reg.',2.98,37.82,22
+'Honda','Pilot','Reg.',2.65,36.1,21
+'Jeep','Grd Cherokee','Reg.',2.81,36.27,21.1
+'Kia','Sportage','Reg.',2.39,29.57,17.2
+'Lexus','RX 350','Prem.',2.83,37.15,19.2
+'Lincoln','MKX','Reg.',2.51,32.66,19
+'Mazda','CX-7','Prem.',2.99,35.22,18.2
+'Mercury','Mountaineer','Reg.',3.18,38.68,22.5
+'Mitsubishi','Outlander','Reg.',2.15,27.16,15.8
+'Nissan','Murano','Prem.',2.69,41.99,21.7
+'Toyota','RAV4','Reg.',2.27,27.33,15.9

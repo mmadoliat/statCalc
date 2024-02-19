@@ -1,0 +1,5 @@
+'Result of Online Query','Percent','Respondants'
+'No response',14,35
+'No help',30,102
+'helped no solution',34,125
+'solved problem',22,238

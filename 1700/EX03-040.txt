@@ -1,0 +1,11 @@
+'Movie','Budget','Box Office','Nominations'
+'The Curious Case of Benjamin Button',150,127.5,13
+'Slumdog Millionaire',15,141.3,10
+'Milk',20,31.8,8
+'The Dark Knight',185,533.3,8
+'WALL-E',180,223.8,6
+'Frost/Nixon',25,18.6,5
+'The Reader',32,34.2,5
+'Doubt',20,33.4,5
+'Changeling',55,35.7,3
+'The Wrestler',6,26.2,2

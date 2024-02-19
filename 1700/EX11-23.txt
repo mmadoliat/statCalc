@@ -1,0 +1,6 @@
+'Staffing Situation','Percent','Number'
+'1.  Desperately short of help – patient care has suffered',12,165
+'2.  Short, but patient care hasn’t suffered',32,140
+'3.  Adequate',38,125
+'4.  More than adequate',12,50
+'5.  Excellent',6,20

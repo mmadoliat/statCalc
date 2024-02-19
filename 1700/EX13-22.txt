@@ -1,0 +1,12 @@
+'Species','Brain Length (cm)','Brain Weight (g)','Body Length (cm)','Body Weight (g)'
+'Human',15,1400,100,62000
+'Baboon',8,140,75,30000
+'Monkey',5,100,30,7000
+'Camel',15,680,200,529000
+'Dolphin',,1700,305,160000
+'Kangaroo',5,56,150,35000
+'Cat',5,30,60,3300
+'Raccoon',5.5,39,80,4290
+'Rabbit',5,12,30,2500
+'Squirrel',3,6,20,900
+'Frog',2,0.1,10,18

@@ -1,0 +1,7 @@
+'Big Headline','Straightforward','Bold Print'
+23,19,28
+42,31,33
+36,18,46
+48,24,29
+33,26,34
+26,,34
