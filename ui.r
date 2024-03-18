@@ -1,4 +1,5 @@
 library(shiny)
+library(cluster)
 
 options(shiny.sanitize.errors = FALSE)
 
@@ -10,7 +11,7 @@ shinyUI(fluidPage(
       conditionalPanel(
         'input.Panel === "Data"',
         radioButtons("f.choice", "Choose from:", c("Server" = "server", "Upload" = "upload"), selected = "upload", inline = TRUE, width = "250px"),
-        uiOutput("which.server", width = "350px"), uiOutput("s.choice", width = "250px"), uiOutput("file"), uiOutput("sep"), uiOutput("header")
+        uiOutput("which.server", width = "350px"), uiOutput("s.choice", width = "250px"), uiOutput("file"), uiOutput("sep"), uiOutput("quote"), uiOutput("header")
       ),
       conditionalPanel(
         'input.Panel === "Descriptive Statistics"',
@@ -35,8 +36,9 @@ shinyUI(fluidPage(
       ),
       conditionalPanel(
         'input.Panel === "KMeans"',
-        uiOutput("kmeansVar1", width = "300px"),uiOutput("kmeansVar2", width = "300px"),
-        uiOutput("kmeansClusters", width = "300px"),
+        uiOutput("varSelectUI"), # Dynamic UI for variable selection
+        numericInput("clusters", "Number of Clusters:", 3, min = 2),
+        plotOutput("kmeansPlot")
       )
     ),
     mainPanel(
@@ -45,8 +47,9 @@ shinyUI(fluidPage(
         id = "Panel", type = "tabs",
         tabPanel(
           title = "Data", value = "Data",
-          column(12, uiOutput("ts.selected", align = "center"), style = "color:blue;"),
-          column(6, plotOutput("data.plot", height = 600, width = 600)), column(6, DT::dataTableOutput("dynamic"))
+          #column(12, uiOutput("ts.selected", align = "center"), style = "color:blue;"),
+          column(12, plotOutput("data.plot", height = 600, width = 600)), 
+          column(12, DT::dataTableOutput("dynamic"))
         ),
         tabPanel(
           title = "Descriptive Statistics",
@@ -65,7 +68,7 @@ shinyUI(fluidPage(
         ),
         tabPanel(
           title = "KMeans",
-          fluidRow(column(12, plotOutput("plot1", height = 600, width = 600)))
+          fluidRow(column(12, plotOutput("clusterPlot", height = 600, width = 600)))
           #fluidRow(verbatimTextOutput("oneplussamtst"))
         )
       )

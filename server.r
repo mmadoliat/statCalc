@@ -84,7 +84,22 @@ shinyServer(function(input, output, clientData, session) {
     if (input$f.choice != "upload") {
       return()
     }
-    radioButtons("sep", "Separator", c("," = ",", ":" = ":", ";" = ";", Tab = "\t"), ",", inline = TRUE)
+    radioButtons("sep", "Separator",
+                 choices = c(Comma = ",",
+                             Semicolon = ";",
+                             Tab = "\t"),
+                 selected = ",")
+  })
+  
+  output$quote <- renderUI({
+    if (input$f.choice != "upload") {
+      return()
+    }
+    radioButtons("quote", "Quote",
+                 choices = c(None = "",
+                             "Double Quote" = '"',
+                             "Single Quote" = "'"),
+                 selected = '"') 
   })
   output$header <- renderUI({
     if (input$f.choice != "upload") {
@@ -127,6 +142,7 @@ shinyServer(function(input, output, clientData, session) {
   )
   
   output$data.plot <- renderPlot({
+    summary(data())
     if (memory.size() > 700) gc()
     if ((input$f.choice == "upload" && is.null(input$file)) || is.null(ncol(data()))) {
       return()
@@ -881,16 +897,61 @@ shinyServer(function(input, output, clientData, session) {
   
   ###KMEANS
   
-  output$kmeansVar1 <- renderUI({
-    selectizeInput("kmeansVar", "Variable 1", choices = names(data()))
+  
+  
+  
+  dataK <- reactive({
+    req(input$file1)
+    df <- read.csv(input$file1$datapath, header = FALSE)
+    colnames(df) <- as.character(unlist(df[1, ]))
+    df <- df[-1, ]
+    return(df)
   })
-  output$kmeansVar2 <- renderUI({
-    selectizeInput("oneplusvar2", "Variable 2", choices = names(data())[-which(names(data()) == input$oneplusvar1)], multiple = FALSE)
+  
+  # Dynamically generate the variable selection UI based on the uploaded file
+  output$varSelectUI <- renderUI({
+    df <- dataK() # Trigger data processing
+    selectInput("selectedVariables", "Choose variables for clustering",
+                choices = colnames(df), multiple = TRUE)
   })
-  output$kmeansClusters <- renderUI({
-    if (is.null(ncol(data()))) {
+  
+  # Perform K-means clustering and plot the results
+  output$kmeansPlot <- renderPlot({
+    req(input$file1)
+    df <- dataK()
+    selectedVars <- input$selectedVariables
+    k <- input$clusters
+    
+    # Ensure that user selects at least two variables for clustering
+    if (length(selectedVars) < 2) {
       return()
     }
+    
+    dfSelected <- df[, selectedVars, drop = FALSE]
+    # Perform K-means clustering
+    set.seed(123) # For reproducibility
+    kmeansResult <- kmeans(dfSelected, centers = k)
+    
+    # Plotting
+    dfSelected$cluster <- factor(kmeansResult$cluster)
+    ggplot(dfSelected, aes_string(x = selectedVars[1], y = selectedVars[2], color = "cluster")) +
+      geom_point() +
+      theme_minimal() +
+      ggtitle("K-means Clustering Result")
+  })
+  
+  
+  
+  output$kmeansVar1 <- renderUI({
+    selectizeInput("kmeansVar", "Variable 1", choices = names(dataK()))
+  })
+  output$kmeansVar2 <- renderUI({
+    selectizeInput("oneplusvar2", "Variable 2", choices = names(dataK())[-which(names(dataK()) == input$oneplusvar1)], multiple = FALSE)
+  })
+  output$kmeansClusters <- renderUI({
+    #if (is.null(ncol(data()))) {
+      #return()
+    #}
     if (is.numeric(data()[, input$var1]) | is.numeric(data()[, input$var2])) {
       sliderInput("clusters", "Cluster Count", min = 1, max = 10, value = 0.5, step = 1, width = "150px")
     }
@@ -898,14 +959,16 @@ shinyServer(function(input, output, clientData, session) {
   
   #Does not work yet
   output$plot1 <- renderPlot({
-      palette(c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3",
-                "#FF7F00", "#FFFF33", "#A65628", "#F781BF", "#999999"))
+    ggballoonplot(data.frame(table(data()[, input$var1], data()[, input$var2])), fill = "value") + scale_fill_viridis_c(option = "C")
+    
+      #palette(c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3",
+                #"#FF7F00", "#FFFF33", "#A65628", "#F781BF", "#999999"))
       
-      par(mar = c(5.1, 4.1, 0, 1))
-      plot(selectedData(),
-           col = clusters()$cluster,
-           pch = 20, cex = 3)
-      points(clusters()$centers, pch = 4, cex = 4, lwd = 4)
+      #par(mar = c(5.1, 4.1, 0, 1))
+      #plot(selectedData(),
+           #col = clusters()$cluster,
+          # pch = 20, cex = 3)
+      #points(clusters()$centers, pch = 4, cex = 4, lwd = 4)
     })
   
   
