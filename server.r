@@ -899,18 +899,11 @@ shinyServer(function(input, output, clientData, session) {
   
   
   
-  
-  dataK <- reactive({
-    req(input$file1)
-    df <- read.csv(input$file1$datapath, header = FALSE)
-    colnames(df) <- as.character(unlist(df[1, ]))
-    df <- df[-1, ]
-    return(df)
-  })
+
   
   # Dynamically generate the variable selection UI based on the uploaded file
   output$varSelectUI <- renderUI({
-    df <- dataK() # Trigger data processing
+    df <- data() # Trigger data processing
     selectInput("selectedVariables", "Choose variables for clustering",
                 choices = colnames(df), multiple = TRUE)
   })
@@ -918,7 +911,7 @@ shinyServer(function(input, output, clientData, session) {
   # Perform K-means clustering and plot the results
   output$kmeansPlot <- renderPlot({
     req(input$file1)
-    df <- dataK()
+    df <- data()
     selectedVars <- input$selectedVariables
     k <- input$clusters
     
@@ -941,35 +934,6 @@ shinyServer(function(input, output, clientData, session) {
   })
   
   
-  
-  output$kmeansVar1 <- renderUI({
-    selectizeInput("kmeansVar", "Variable 1", choices = names(dataK()))
-  })
-  output$kmeansVar2 <- renderUI({
-    selectizeInput("oneplusvar2", "Variable 2", choices = names(dataK())[-which(names(dataK()) == input$oneplusvar1)], multiple = FALSE)
-  })
-  output$kmeansClusters <- renderUI({
-    #if (is.null(ncol(data()))) {
-      #return()
-    #}
-    if (is.numeric(data()[, input$var1]) | is.numeric(data()[, input$var2])) {
-      sliderInput("clusters", "Cluster Count", min = 1, max = 10, value = 0.5, step = 1, width = "150px")
-    }
-  })
-  
-  #Does not work yet
-  output$plot1 <- renderPlot({
-    ggballoonplot(data.frame(table(data()[, input$var1], data()[, input$var2])), fill = "value") + scale_fill_viridis_c(option = "C")
-    
-      #palette(c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3",
-                #"#FF7F00", "#FFFF33", "#A65628", "#F781BF", "#999999"))
-      
-      #par(mar = c(5.1, 4.1, 0, 1))
-      #plot(selectedData(),
-           #col = clusters()$cluster,
-          # pch = 20, cex = 3)
-      #points(clusters()$centers, pch = 4, cex = 4, lwd = 4)
-    })
   
   
 })

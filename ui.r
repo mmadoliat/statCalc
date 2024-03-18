@@ -36,14 +36,14 @@ shinyUI(fluidPage(
       ),
       conditionalPanel(
         'input.Panel === "KMeans"',
+        fileInput("file1", "Choose CSV File", accept = ".csv"),
         uiOutput("varSelectUI"), # Dynamic UI for variable selection
-        numericInput("clusters", "Number of Clusters:", 3, min = 2),
-        plotOutput("kmeansPlot")
+        numericInput("clusters", "Number of Clusters:", 3, min = 2)
       )
     ),
     mainPanel(
       width = 9, tags$style(type = "text/css", ".shiny-output-error { visibility: hidden; }", ".shiny-output-error:before { visibility: hidden; },"), # ".nav-tabs {font-size: 10px}"),
-      tabsetPanel(
+      tabsetPanel( 
         id = "Panel", type = "tabs",
         tabPanel(
           title = "Data", value = "Data",
@@ -67,9 +67,7 @@ shinyUI(fluidPage(
           fluidRow(verbatimTextOutput("oneplussamtst"))
         ),
         tabPanel(
-          title = "KMeans",
-          fluidRow(column(12, plotOutput("clusterPlot", height = 600, width = 600)))
-          #fluidRow(verbatimTextOutput("oneplussamtst"))
+          title = "KMeans", value = "KMeans", plotOutput("kmeansPlot")
         )
       )
     )
