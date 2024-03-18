@@ -1,9 +1,15 @@
 library(shiny)
+<<<<<<< HEAD
 library(cluster)
+=======
+library(shinythemes)
+>>>>>>> 900700642253a0c17299f99e53c5fc993d5bac17
 
 options(shiny.sanitize.errors = FALSE)
 
-shinyUI(fluidPage(
+shinyUI(
+  fluidPage(
+  shinythemes::themeSelector(), # R SHINY THEME #
   titlePanel("JAMM - Stat Calculator"),
   sidebarLayout(
     sidebarPanel(
@@ -67,7 +73,17 @@ shinyUI(fluidPage(
           fluidRow(verbatimTextOutput("oneplussamtst"))
         ),
         tabPanel(
+<<<<<<< HEAD
           title = "KMeans", value = "KMeans", plotOutput("kmeansPlot")
+=======
+          title = "KMeans",
+          fluidRow(column(12, plotOutput("plot1", height = 600, width = 600)))
+          #fluidRow(verbatimTextOutput("oneplussamtst"))
+        ),
+        tabPanel(
+          title = "XXXXXX",
+          fluidRow(column(12, plotOutput("plot1", height = 600, width = 600)))
+>>>>>>> 900700642253a0c17299f99e53c5fc993d5bac17
         )
       )
     )
