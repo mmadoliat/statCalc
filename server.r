@@ -896,11 +896,6 @@ shinyServer(function(input, output, clientData, session) {
   })
   
   ###KMEANS
-  
-  
-  
-
-  
   # Dynamically generate the variable selection UI based on the uploaded file
   output$varSelectUI <- renderUI({
     df <- data() # Trigger data processing
