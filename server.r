@@ -523,22 +523,19 @@ shinyServer(function(input, output, clientData, session) {
         values$yendl <- dchisq(values$crit_val, df = values$degf)
       }
       if (input$HT_plts == "HT_pval") { # browser()
-        # values$x0<-(input$nullhypo*isolate(values$x0))/values$degf
         values$statsP <- values$tsthat
       }
     }
-    # ind<-which.max(isolate(values$y0))
+
     dat <- data.frame(x = values$x0, y = values$y0)
     if (input$type == "sigma" & input$HT_plts == "HT_pval") {
       dat <- data.frame(x = ((input$nullhypo * isolate(values$x0)) / values$degf), y = values$y0)
     }
     ind <- which.max(dat$y)
-    # if (input$type !="sigma") dat2=data.frame(x=values$x2,y1=values$y2)
     label <- paste0(
       sprintf("%5s", "TS:"), sprintf("%9s", attr(values$stats, "names")), " = ",
       sprintf("%.03f", values$stats)
     )
-    # label=c(label,paste0(sprintf("%9s","df")," = ",sprintf("%.2f",values$degf)))
     
     if (values$pvalue >= 0.00001) {
       label <- c(label, paste0(sprintf("%9s", "pval"), " = ", sprintf("%.5f", values$pvalue)))
@@ -720,20 +717,7 @@ shinyServer(function(input, output, clientData, session) {
       values$stats <- ttst$statistic
       ttst
     }
-    # # T-test numerical variables grouped by categorical variable with 2 levels
-    # else if(input$oneplustype=="ttst"){
-    #   if (is.factor(data[,input$oneplusvar1]) & length(levels(data[,input$oneplusvar1])) =2 | is.factor(data[,input$oneplusvar2]) & length(levels(data[,input$oneplusvar2]))=2 ){
-    #     if(is.factor(data[,input$oneplusvar1])) {
-    #       ttst<-t.test(subset(data,data[,input$oneplusvar1]==levels(data[,input$oneplusvar1])[1],select=data[,input$oneplusvar2]),subset(data,data[,input$oneplusvar1]==levels(data[,input$oneplusvar1])[2],select=data[,input$oneplusvar2]),
-    #           paired=as.logical(input$dependency), alternative = input$palthypo,mu=input$pnullhypo, var.equal = as.logical(input$var.eq)); values$degf<-ttst$parameter;
-    #     } else {
-    #       ttst<-t.test(subset(data,data[,input$oneplusvar2]==levels(data[,input$oneplusvar2])[1],select=data[,input$oneplusvar1]),subset(data,data[,input$oneplusvar2]==levels(data[,input$oneplusvar2])[2],select=data[,input$oneplusvar1]),
-    #           paired=as.logical(input$dependency), alternative = input$palthypo,mu=input$pnullhypo, var.equal = as.logical(input$var.eq)); values$degf<-ttst$parameter;
-    #     }
-    #
-    #   }
-    # }
-    # F-test to test for homogeneity in variances.
+
     else if (input$oneplustype == "ft2vr") { # browser()
       if (is.factor(data()[, input$oneplusvar1]) & length(levels(data()[, input$oneplusvar1])) != 2 | is.factor(data()[, input$oneplusvar2]) & length(levels(data()[, input$oneplusvar2])) != 2) {
         return("One variable should be a factor with exactly 2 levels.")
@@ -765,7 +749,7 @@ shinyServer(function(input, output, clientData, session) {
       } else {
         aovtst <- aov(data()[, input$oneplusvar2] ~ data()[, input$oneplusvar1], data = data())
       }
-      # if (input$multcomp==TRUE) TukeyHSD(aovtst)
+     
       values$degf1 <- summary(aovtst)[[1]][1, 1]
       values$degf2 <- summary(aovtst)[[1]][2, 1]
       values$pvalue <- summary(aovtst)[[1]][1, 5]
@@ -785,18 +769,14 @@ shinyServer(function(input, output, clientData, session) {
   output$oneplussamtst.plt <- renderPlot({
     if (is.null(input$oneplustype) || input$oneplustype == "ftst_ind") {
       return()
-    } #|| is.null(input$palthypo)
+    } 
     values$alternative <- input$palthypo
     if (input$oneplustype == "aov") values$alternative <- "greater"
     if (values$alternative == "two.sided") values$newalpha <- values$alpha / 2 else values$newalpha <- values$alpha
     if (input$oneplustype == "mu") {
       values$x0 <- seq(-4, 4, length = 100)
       values$x0 <- append(isolate(values$x0), values$stats, which(order(c(values$stats, isolate(values$x0))) == 1) - 1)
-      # if(values$stats>4) {
-      # values$x0=c(isolate(values$x0),values$stats)
-      # } else if(values$stats < -4) {
-      # values$x0=c(values$stats,isolate(values$x0))
-      # }
+
       values$y0 <- dt(values$x0, df = values$degf)
       values$yendr <- dt(values$crit_val, df = values$degf)
       values$yendl <- dt(-values$crit_val, df = values$degf)
@@ -817,7 +797,7 @@ shinyServer(function(input, output, clientData, session) {
     }
     ind <- which.max(isolate(values$y0))
     dat <- data.frame(x = values$x0, y = values$y0)
-    # if (input$oneplustype != "ftst_ind") dat2=data.frame(x=values$x2,y1=values$y2)
+
     label <- paste0(
       sprintf("%9s", attr(values$stats, "names")), " = ",
       sprintf("%.03f", values$stats)
@@ -834,7 +814,7 @@ shinyServer(function(input, output, clientData, session) {
     }
     label <- stringr::str_pad(label, 19, side = "right")
     label <- stringr::str_c(label, collapse = "\n")
-    # if (input$oneplustype=="aov" | input$oneplustype=="ftst_ind" ) values$alternative <-"greater"
+
     
     p2 <- ggplot(dat, aes_string(x = "x", y = "y")) +
       geom_line() +
@@ -858,26 +838,6 @@ shinyServer(function(input, output, clientData, session) {
     if (!is.null(input$confintp) && input$confintp == TRUE) {
       p2 <- p2 + geom_vline(xintercept = c(values$LCL, values$UCL))
     }
-    # if (input$oneplustype=="mu" & input$confintp==TRUE){
-    #   p2<-ggplot(dat,aes_string(x="x",y="y"))+geom_line()+theme_bw()
-    #   p2<-p2+geom_segment(aes(x=values$tsthat,xend=values$tsthat,y=0, yend=values$yendl),linetype=2,color="blue")
-    #   if (values$alternative=="two.sided") {
-    #     dif<- abs(values$stats-input$nullhypo); rr<- input$nullhypo+dif; lr<- input$nullhypo-dif
-    #     dat1 <- dat[values$x0 <= lr,]; dat2 <- dat[values$x0 >=rr,]
-    #     p2<-p2+geom_area(data=dat1,aes(x,y),fill="red",alpha=0.5)
-    #     p2<-p2+geom_area(data=dat2,aes(x,y),fill="red",alpha=0.5)
-    #   } else if (values$alternative=="less") {
-    #     dat <- dat[values$x0 <= values$stats,]
-    #     p2<-p2+geom_area(data=dat,aes(x,y),fill="red",alpha=0.5)
-    #  } else {
-    #    dat <- dat[values$x0 >= values$stats,]
-    #    p2<-p2+geom_area(data=dat,aes(x,y),fill="red",alpha=0.5)
-    #  }
-    #   p2 <- p2 +geom_vline(xintercept=c(values$LCL,values$UCL))
-    #   p2<- p2+annotate('text',x=values$x0[ind],y=values$y0[ind],label="H[0]",parse=TRUE,size=10,col=2)
-    # }
-    # if(values$alternative!="less")  p2<-p2+geom_area(data=dat1,aes(values$x1,values$y1),fill="red",alpha=0.5)
-    # if(values$alternative!="greater")  p2<-p2+ geom_area(data=dat2,aes(values$x2,values$y2),fill="red",alpha=0.5)
     if (abs(values$stats) > 4) {
       hjust <- 1
     } else if (values$stats > 0) {
@@ -888,10 +848,7 @@ shinyServer(function(input, output, clientData, session) {
     
     p2 <- p2 + geom_segment(aes(x = values$stats, y = 0, xend = values$stats, yend = max(values$y0)), color = "blue")
     p2 <- p2 + annotate(geom = "label", x = Inf, y = Inf, label = label, vjust = 1.1, hjust = 1.1)
-    # geom_text(x=xpoint2,y=0.38,label=label)+
-    # p2 <-p2+ annotate(geom="text",x=ifelse(values$alternative=="less",values$xpoint2,values$xpoint),y=0,
-    # label=paste0("p < ",values$alpha),vjust=1.5,color="red")
-    p2 <- p2 + labs(title = values$method, x = paste0(values$statName, " statistic"), y = "Probability Density") + theme(plot.title = element_text(hjust = 0.5))
+   p2 <- p2 + labs(title = values$method, x = paste0(values$statName, " statistic"), y = "Probability Density") + theme(plot.title = element_text(hjust = 0.5))
     p2
   })
   

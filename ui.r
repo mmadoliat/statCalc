@@ -76,7 +76,6 @@ shinyUI(
           title = "KMeans", 
           plotOutput("kmeansPlot"),
           fluidRow(column(12, plotOutput("plot1", height = 600, width = 600)))
-          #fluidRow(verbatimTextOutput("oneplussamtst"))
         ),
       )
     )
