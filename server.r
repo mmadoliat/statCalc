@@ -887,10 +887,50 @@ shinyServer(function(input, output, clientData, session) {
       ggtitle("K-means Clustering Result")
   })
   
-  
-  
-  
-  ### BENNETT ANALYSIS TAB ### 
+  ### ANOVA ###
+  observeEvent(input$calculate, {
+    # Parse input data
+    groups <- unlist(strsplit(input$group, ",")) # Extract group names from input
+    data <- as.numeric(unlist(strsplit(input$data, ","))) # Extract data values from input
+    
+    # Check if input data is valid
+    if (length(data) %% length(groups) != 0) {
+      return("Error: Number of data points must be divisible by number of groups.")
+    }
+    
+    # Create data frame
+    df <- data.frame(Group = rep(groups, each = length(data) / length(groups)),
+                     Value = data)
+    
+    # Perform ANOVA
+    anova_result <- aov(Value ~ Group, data = df)
+    
+    # Generate ANOVA table
+    anova_table <- as.data.frame(summary(anova_result)[[1]])
+    
+    # Add more detail to the ANOVA table output
+    # ANOVA table provides statistical information about the variance between groups
+    # and within groups, as well as the F-statistic and p-value indicating the 
+    # significance of the group differences
+    
+    # Add column names for clarity
+    colnames(anova_table) <- c("Sum of Squares", "Degrees of Freedom", "Mean Square", "F-Value", "Pr(>F)")
+    
+    # Output ANOVA table with added detail
+    output$anova_table <- renderTable({
+      anova_table
+    })
+    
+    # Plot data
+    p <- ggplot(df, aes(x = Group, y = Value)) +
+      geom_boxplot() +
+      labs(title = "Boxplot of Data by Group")
+    
+    # Output plot
+    output$anova_plot <- renderPlot({
+      p
+    })
+  })
   
   
   

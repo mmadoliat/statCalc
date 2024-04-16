@@ -45,6 +45,26 @@ shinyUI(
         fileInput("file1", "Choose CSV File", accept = ".csv"),
         uiOutput("varSelectUI"), # Dynamic UI for variable selection
         numericInput("clusters", "Number of Clusters:", 3, min = 2)
+      ),
+      conditionalPanel(
+        'input.Panel === "Anova"',
+        textInput("group", "Enter Group Names (comma separated):", "A,B,C"),
+        textInput("data", "Enter Data Values (comma separated):", "1,2,3,4,5,6"),
+        actionButton("calculate", "Calculate ANOVA"),
+        
+        # Text to better understand ANOVA table output and corresponding variables #
+        br(),
+        br(),
+        p(strong("Sum of Squares: "), 
+          "calculates the total variation that can be attributed to various groups."),
+        p(strong("Degrees of Freedom: "),
+          "the number of independent pieces of information."),
+        p(strong("Mean Square: "),
+          "the significance pieces of each group."),
+        p(strong("F-value: "),
+          "the ratio of explained variance to unexplained variance."),
+        p(strong("Pr(>F): "),
+          "p-value to determine whether to reject the null hypothesis or not.")
       )
     ),
     mainPanel(
@@ -77,6 +97,11 @@ shinyUI(
           plotOutput("kmeansPlot"),
           fluidRow(column(12, plotOutput("plot1", height = 600, width = 600)))
         ),
+        tabPanel(
+          title = "Anova", 
+          tableOutput("anova_table"),
+          fluidRow(column(12, plotOutput("anova_plot", height = 400, width = 600)))
+        )
       )
     )
   )
