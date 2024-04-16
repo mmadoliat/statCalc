@@ -16,6 +16,9 @@ library(tidyr)
 options(shiny.sanitize.errors = FALSE)
 
 shinyServer(function(input, output, clientData, session) {
+  
+  #### DATA #### 
+  
   load("data.Rda")
   data <- reactiveVal(list())
   values <- reactiveValues()
