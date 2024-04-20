@@ -11,8 +11,6 @@ library(plyr)
 library(dplyr)
 library(tidyr)
 
-#test commit
-
 options(shiny.sanitize.errors = FALSE)
 
 shinyServer(function(input, output, clientData, session) {
