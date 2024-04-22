@@ -48,22 +48,22 @@ shinyUI(
       ),
       conditionalPanel(
         'input.Panel === "Anova"',
-        textInput("group", "Enter Group Names (comma separated):", "A,B,C"),
-        textInput("data", "Enter Data Values (comma separated):", "1,2,3,4,5,6"),
-        actionButton("calculate", "Calculate ANOVA"),
+        fileInput("file", "Upload input data (csv file with header)"),  
+        
+        htmlOutput("yvarselect"),
+        htmlOutput("xvarselect"),
+        htmlOutput("fxvarselect"),
         
         # Text to better understand ANOVA table output and corresponding variables #
         br(),
         br(),
-        p(strong("Sum of Squares: "), 
-          "calculates the total variation that can be attributed to various groups."),
-        p(strong("Degrees of Freedom: "),
-          "the number of independent pieces of information."),
-        p(strong("Mean Square: "),
-          "the significance pieces of each group."),
-        p(strong("F-value: "),
-          "the ratio of explained variance to unexplained variance."),
-        p(strong("Pr(>F): "),
+        p(strong("Estimate: "), 
+          "calculates the sum of squared errors between the observed and predicted values of the outcome variable."),
+        p(strong("Standard Error: "),
+          "the accuracy of the estimated ordinary least squares (OLS) coefficient with respect to the population parameter."),
+        p(strong("t-value: "),
+          "the measurement of the difference relative to the variation in the data"),
+        p(strong("Pr(>|t|): "),
           "p-value to determine whether to reject the null hypothesis or not.")
       )
     ),
@@ -99,9 +99,13 @@ shinyUI(
         ),
         tabPanel(
           title = "Anova", 
-          tableOutput("anova_table"),
-          fluidRow(column(12, plotOutput("anova_plot", height = 400, width = 600)))
-        )
+          fluidRow(column(12, plotOutput("Plot1", height = 400, width = 600))),
+          h4(p("Summary for selected Y variable(s):")),
+          verbatimTextOutput('summaryY'), 
+          h4(p("Summary for selected X Variable(s):")),
+          DT::dataTableOutput('summaryX'),
+          h4(p("OLS Results")),
+          DT::dataTableOutput('OLSResult')),
       )
     )
   )

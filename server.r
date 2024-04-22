@@ -889,50 +889,82 @@ shinyServer(function(input, output, clientData, session) {
   })
   
   ### ANOVA ###
-  observeEvent(input$calculate, {
-    # Parse input data
-    groups <- unlist(strsplit(input$group, ",")) # Extract group names from input
-    data <- as.numeric(unlist(strsplit(input$data, ","))) # Extract data values from input
+  myData <- reactive({
+    inFile <- input$file
+    if (is.null(inFile)) return(NULL)
+    data <- read.csv(inFile$datapath, header = TRUE)
+    data
+  }) # Uploaded Data
+  
+  output$yvarselect <- renderUI({
+    if (is.null(input$file)) {return(NULL)}
     
-    # Check if input data is valid
-    if (length(data) %% length(groups) != 0) {
-      return("Error: Number of data points must be divisible by number of groups.")
-    }
-    
-    # Create data frame
-    df <- data.frame(Group = rep(groups, each = length(data) / length(groups)),
-                     Value = data)
-    
-    # Perform ANOVA
-    anova_result <- aov(Value ~ Group, data = df)
-    
-    # Generate ANOVA table
-    anova_table <- as.data.frame(summary(anova_result)[[1]])
-    
-    # Add more detail to the ANOVA table output
-    # ANOVA table provides statistical information about the variance between groups
-    # and within groups, as well as the F-statistic and p-value indicating the 
-    # significance of the group differences
-    
-    # Add column names for clarity
-    colnames(anova_table) <- c("Sum of Squares", "Degrees of Freedom", "Mean Square", "F-Value", "Pr(>F)")
-    
-    # Output ANOVA table with added detail
-    output$anova_table <- renderTable({
-      anova_table
-    })
-    
-    # Plot data
-    p <- ggplot(df, aes(x = Group, y = Value)) +
-      geom_boxplot() +
-      labs(title = "Boxplot of Data by Group")
-    
-    # Output plot
-    output$anova_plot <- renderPlot({
-      p
-    })
+    selectInput("yAttr", "Select Y variable",multiple = TRUE,
+                selectize = TRUE,
+                colnames(myData()))
   })
   
+  output$xvarselect <- renderUI({
+    if (identical(myData(), '') || identical(myData(),data.frame())) return(NULL)
+    
+    selectInput("xAttr", label = "Select X variables",multiple = TRUE,
+                selectize = TRUE,
+                selected = setdiff(colnames(myData()),input$yAttr),choices = setdiff(colnames(myData()),input$yAttr)
+    )
+  })
   
+  output$fxvarselect <- renderUI({
+    if (identical(myData(), '') || identical(myData(),data.frame())) return(NULL)
+    
+    selectInput("fxAttr", label = "Select X(Non-Metric) variables",multiple = TRUE,
+                selectize = TRUE,
+                selected = setdiff(colnames(myData()),input$yAttr),choices = setdiff(colnames(myData()),input$yAttr)
+    )
+  })
+  
+  output$contents <- DT::renderDataTable({
+    DT::datatable(head(myData()))       
+  }) # Data information
+  
+  output$summaryY <- renderPrint({
+    df <- myData()
+    summary(df[,input$yAttr])
+    
+  }) # Y Variable Summary
+  
+  output$summaryX <- DT::renderDataTable({
+    df <- myData()
+    DT::datatable(do.call(cbind, lapply(df[, input$xAttr], summary)))
+    
+  }) # X Variable Summary
+  
+  output$OLSResult <- DT::renderDataTable({
+    x <-input$xAttr
+    y <- input$yAttr
+    fx <- input$fxAttr
+    
+    for (i0 in (which(x %in% fx == TRUE))){x[i0] <- paste('as.factor(',x[i0],')')}
+    f <- paste(paste(y, collapse = "+"),'~', paste(x, collapse = "+"))
+    fit_ols <- summary(lm(f, myData()))
+    
+    DT::datatable(round(fit_ols$coefficients,3))
+  }) # Regression Results
+  
+  output$Plot1 <- renderPlot({if(is.null(input$file)){return(NULL)} else{
+    if (length(input$yAttr) == 1){
+      if (length(input$xAttr) ==1){
+
+        x <- input$xAttr
+        y <- input$yAttr
+        fx <- input$fxAttr
+        
+        y_name = colnames(y)
+        x_name = colnames(x)
+        
+        ggplot(as.data.frame(myData()), aes(myData()[,x], myData()[,y])) +
+          geom_boxplot() + labs(x=input$xAttr, y=input$yAttr)  
+        
+      }}}
+  }) # Anova Visualization
   
 })
