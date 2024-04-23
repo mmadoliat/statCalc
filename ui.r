@@ -42,13 +42,29 @@ shinyUI(
       ),
       conditionalPanel(
         'input.Panel === "KMeans"',
-        fileInput("file1", "Choose CSV File", accept = ".csv"),
+        #fileInput("file1", "Choose CSV File", accept = ".csv"),
         uiOutput("varSelectUI"), # Dynamic UI for variable selection
-        numericInput("clusters", "Number of Clusters:", 3, min = 2)
+        numericInput("clusters", "Number of Clusters:", 3, min = 2), 
+        
+        #Text to better understand KMeans
+        br(),
+        br(),
+        p(strong("KMeans: "), 
+          "A clustering algorithm that partions data into groups or 'clusters' based on similarity."),
+        p(strong("Step 1: Initialization: "),
+          "Choose the number of 'k's that you want. Randomly choose data points to act as the centriods of these 'k's. "),
+        p(strong("Step 2: Assignment: "),
+          "For each data point, calculate the distance between the point and each centroid. Assign the data point to the cluster whose centroid or cluster is closest to it."),
+        p(strong("Step 3: Update data "),
+          "Recalculate centriod based after all data points have been assigned. The centriod is the mean of the cluster."),
+        p(strong("Step 4: Repeat: "),
+          "The algorithm repeats steps 2 and 3 until centriods do not significally change."),
+        p(strong("Step 5: Finalization: "),
+          "Once algorithm has convereged and all data points are in their final cluster, everything is finalized")
       ),
       conditionalPanel(
         'input.Panel === "Anova"',
-        fileInput("file", "Upload input data (csv file with header)"),  
+        #fileInput("file", "Upload input data (csv file with header)"),  
         
         htmlOutput("yvarselect"),
         htmlOutput("xvarselect"),

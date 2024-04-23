@@ -859,13 +859,13 @@ shinyServer(function(input, output, clientData, session) {
   # Dynamically generate the variable selection UI based on the uploaded file
   output$varSelectUI <- renderUI({
     df <- data() # Trigger data processing
-    selectInput("selectedVariables", "Choose variables for clustering",
+    selectInput("selectedVariables", "Choose variables for clustering. Must choose at least 2.",
                 choices = colnames(df), multiple = TRUE)
   })
   
   # Perform K-means clustering and plot the results
   output$kmeansPlot <- renderPlot({
-    req(input$file1)
+    #req(input$file1)
     df <- data()
     selectedVars <- input$selectedVariables
     k <- input$clusters
