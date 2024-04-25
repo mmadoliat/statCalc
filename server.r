@@ -897,7 +897,7 @@ shinyServer(function(input, output, clientData, session) {
   }) # Uploaded Data
   
   output$yvarselect <- renderUI({
-    selectInput("yAttr", "Select Y variable",multiple = TRUE,
+    selectInput("yAttr", "Select Y variable",multiple = FALSE,
                 selectize = TRUE,
                 colnames(myData()))
   })
@@ -905,7 +905,7 @@ shinyServer(function(input, output, clientData, session) {
   output$xvarselect <- renderUI({
     if (identical(myData(), '') || identical(myData(),data.frame())) return(NULL)
     
-    selectInput("xAttr", label = "Select X variables",multiple = TRUE,
+    selectInput("xAttr", label = "Select X variables",multiple = FALSE,
                 selectize = TRUE,
                 selected = setdiff(colnames(myData()),input$yAttr),choices = setdiff(colnames(myData()),input$yAttr)
     )
@@ -914,7 +914,7 @@ shinyServer(function(input, output, clientData, session) {
   output$fxvarselect <- renderUI({
     if (identical(myData(), '') || identical(myData(),data.frame())) return(NULL)
     
-    selectInput("fxAttr", label = "Select X(Non-Metric) variables",multiple = TRUE,
+    selectInput("fxAttr", label = "Select X(Non-Metric) variables",multiple = FALSE,
                 selectize = TRUE,
                 selected = setdiff(colnames(myData()),input$yAttr),choices = setdiff(colnames(myData()),input$yAttr)
     )
