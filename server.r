@@ -893,15 +893,10 @@ shinyServer(function(input, output, clientData, session) {
   
   ### ANOVA ###
   myData <- reactive({
-    inFile <- input$file
-    if (is.null(inFile)) return(NULL)
-    data <- read.csv(inFile$datapath, header = TRUE)
-    data
+    df <- data()
   }) # Uploaded Data
   
   output$yvarselect <- renderUI({
-    if (is.null(input$file)) {return(NULL)}
-    
     selectInput("yAttr", "Select Y variable",multiple = TRUE,
                 selectize = TRUE,
                 colnames(myData()))
@@ -953,7 +948,7 @@ shinyServer(function(input, output, clientData, session) {
     DT::datatable(round(fit_ols$coefficients,3))
   }) # Regression Results
   
-  output$Plot1 <- renderPlot({if(is.null(input$file)){return(NULL)} else{
+  output$Plot1 <- renderPlot({
     if (length(input$yAttr) == 1){
       if (length(input$xAttr) ==1){
 
@@ -967,7 +962,7 @@ shinyServer(function(input, output, clientData, session) {
         ggplot(as.data.frame(myData()), aes(myData()[,x], myData()[,y])) +
           geom_boxplot() + labs(x=input$xAttr, y=input$yAttr)  
         
-      }}}
+      }}
   }) # Anova Visualization
   
   ##### Data Quality Panel ####

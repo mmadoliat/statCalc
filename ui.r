@@ -67,9 +67,9 @@ shinyUI(
         'input.Panel === "Anova"',
         #fileInput("file", "Upload input data (csv file with header)"),  
         
-        htmlOutput("yvarselect"),
-        htmlOutput("xvarselect"),
-        htmlOutput("fxvarselect"),
+        uiOutput("yvarselect"),
+        uiOutput("xvarselect"),
+        uiOutput("fxvarselect"),
         
         # Text to better understand ANOVA table output and corresponding variables #
         br(),
