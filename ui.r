@@ -1,11 +1,12 @@
 library(shiny)
-
 library(cluster)
-
 library(shinythemes)
+library(bslib)
+library(heatmaply)
 # test commit
 
 options(shiny.sanitize.errors = FALSE)
+
 
 shinyUI(
   fluidPage(
@@ -81,7 +82,7 @@ shinyUI(
           "the measurement of the difference relative to the variation in the data"),
         p(strong("Pr(>|t|): "),
           "p-value to determine whether to reject the null hypothesis or not.")
-      )
+      ), 
     ),
     mainPanel(
       width = 9, tags$style(type = "text/css", ".shiny-output-error { visibility: hidden; }", ".shiny-output-error:before { visibility: hidden; },"), # ".nav-tabs {font-size: 10px}"),
@@ -122,7 +123,116 @@ shinyUI(
           DT::dataTableOutput('summaryX'),
           h4(p("OLS Results")),
           DT::dataTableOutput('OLSResult')),
+        
+        
+        
+        tabPanel(
+          title = "Data Quality",
+          tabsetPanel(
+            tabPanel(
+              title = "Column Selection",
+              br(),
+              "Select which varibles to test data quality",
+              br(),
+              br(),
+              
+              selectInput(
+                "var_select", label = NULL, choices = NULL, selected = NULL, multiple = TRUE),
+              tableOutput("subset_contents")
+              ),
+            
+            tabPanel(title = "Collinearity",
+                     br(),
+                     div(HTML("Collinearity exists when two <em>independent</em> varibles are correlated with one another.")),
+                     br(),
+                     div(HTML("When <em>multiple independent</em> varibles are correlated, multicolliearity exists.")),
+                     br(),
+                     "Any type of collinearity between independent variables is a violation of classical assumptions.",
+                     br(),
+                     br(),
+                     
+                     tabsetPanel(
+                       tabPanel(title = "Correlation Heatmap",
+                         br(),
+                         "Correlation heatmap display the degree of collinearity between variables.",
+                         br(),
+                         br(),
+                         "Darker colors suggest correlation between the two varibles.",
+                         br(),
+                         br(),
+                         plotlyOutput("heatmap_plot")
+                       ),
+                       tabPanel(title = "Variance Inflation Factos (VIFs)",
+                         sidebarLayout(
+                           sidebarPanel(
+                             selectInput("vif_1_select", label = NULL, choices = NULL, selected = NULL, multiple = FALSE),
+                             selectInput("vif_2_select", label = NULL, choices = NULL, selected = NULL, multiple = TRUE), 
+                             br(),
+                             "Important!",
+                             br(),
+                             br(),
+                             "The first variable is not the dependent variable. If your models is: ",
+                             br(),
+                             "y = x1 + x2 + ... xi + c",
+                             br(),
+                             br(),
+                             "The first variable should be one of the independent varibles. Any combination of the remaining inpedent variable can be used for the second portion."
+                           ),
+                           mainPanel(
+                             br(),
+                             verbatimTextOutput("vif_output"),
+                             br(),
+                             "1:  no correlation for this model",
+                             br(),
+                             "1 - 5: moderate correlation for this model",
+                             br(),
+                             "> 5: potentially severe correlation for this model"
+                           )
+                         )
+                       ),
+                       tabPanel(
+                         title = "Solutions", 
+                         "What should you do in the case of (multi)collinearity?",
+                         br(),
+                         br(),
+                         "       - If therory suggests that a varible should be present in the model, the variables can be left alone", 
+                         br(),
+                         br(),
+                         "       - One varbiable can be dropped, so long as thoery suggests both are not necessary",
+                         br(),
+                         br(),
+                         "       - Increase sample size"
+                       )
+                     )
+            ),
+            tabPanel(title = "Spread",
+              br(),
+              div(HTML("Heteroscadsticity exists when the variance of the error term is <em>not</em> constant, which is a violation of classical assumptions.")),
+              br(),
+              tabsetPanel(
+                tabPanel(title = "Breusch Pagan Test",
+                  sidebarLayout(
+                    sidebarPanel(
+                      selectInput("spread_1_select", label = NULL, choices = NULL, selected = NULL, multiple = FALSE),
+                      selectInput("spread_2_select", label = NULL, choices = NULL, selected = NULL, multiple = TRUE)
+                    ),
+                    mainPanel(
+                      verbatimTextOutput("spread_output"),
+                      br(),
+                      "If Prob > Chi2 (p-value) is less than 0.05, the null hypothesis is rejected and heteroskedasticity is present"
+                    )
+                  )
+                ), 
+                tabPanel(title = "Solutions",
+                  br(),
+                  "If heterokedasticity is present in the model, apply White's Robust Standard Error!"
+                )
+              )
+            )
+          )
+        )
       )
     )
   )
-))
+  ))
+

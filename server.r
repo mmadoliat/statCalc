@@ -10,6 +10,9 @@ library(ggpubr)
 library(plyr)
 library(dplyr)
 library(tidyr)
+library(car)
+library(lmtest)
+library(olsrr)
 
 options(shiny.sanitize.errors = FALSE)
 
@@ -967,4 +970,45 @@ shinyServer(function(input, output, clientData, session) {
       }}}
   }) # Anova Visualization
   
+  ##### Data Quality Panel ####
+  
+
+  output$contents <- renderTable({return(data())})
+  
+  observe({
+    updateSelectInput(session, "var_select", choices = c(colnames(data())), selected = NULL)
+  })
+  
+  data_1 <- reactive({
+    df_local <- subset(as.data.frame(data()), select = input$var_select) 
+    return(df_local)
+  })
+  
+  output$subset_contents <- renderTable(req(data_1()))
+  
+  output$heatmap_plot <- renderPlotly({heatmaply_cor(cor(data_1()), k_col = 2, k_row = 2)})
+  
+  observe({updateSelectInput(session, "vif_1_select", label = "Select one variable...", choices = c(colnames(data_1())), selected = NULL)})
+  
+  observe({updateSelectInput(session, "vif_2_select", label = "Select variable(s) to check for collinearity with intial variable", choices = c(colnames(data_1())), selected = NULL)})
+  
+  data_2 <- reactive({
+    df_local <- subset(data_1(), select = c(input$vif_1_select, input$vif_2_select)) 
+    return(df_local)
+  })
+  
+  output$vif_output <- renderPrint({vif(lm(as.data.frame(data_2())))})
+  
+  observe({updateSelectInput(session, "spread_1_select", label = "Choose dependent variable...", choices = c(colnames(data_1())), selected = NULL)})
+  
+  observe({updateSelectInput(session, "spread_2_select", label = "Choose inepdendent variable(s)...", choices = c(colnames(data_1())), selected = NULL)})
+  
+  data_3 <- reactive({
+    df_local <- data_1()
+    df_local[, c(input$spread_1_select, input$spread_2_select)]
+  })
+  
+  output$spread_output <- renderPrint({ols_test_breusch_pagan(lm(as.data.frame(data_3())), rhs = TRUE)})
+
 })
+
