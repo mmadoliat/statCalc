@@ -1,0 +1,21 @@
+'NATION','GOLD','SILVER','BRONZE'
+'United States',36,38,36
+'China',51,21,28
+'Russia',23,21,28
+'Great Britain',19,13,15
+'Australia',14,15,17
+'Germany',16,10,15
+'France',7,16,17
+'South Korea',13,10,8
+'Italy',8,10,10
+'Ukraine',7,5,15
+'Japan',9,6,10
+'Cuba',2,11,11
+'Belarus',4,5,10
+'Spain',5,10,3
+'Canada',3,9,6
+'Netherlands',7,5,4
+'Brazil',3,4,8
+'Kenya',5,5,4
+'Kazakhstan',2,4,7
+'Jamaica',6,3,2

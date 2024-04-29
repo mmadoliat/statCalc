@@ -1,0 +1,9 @@
+'Nation','Infant Mortality'
+'China',25
+'Germany',4
+'India',58
+'Japan',3
+'Mexico',22
+'Russia',17
+'S. Africa',62
+'United States',7

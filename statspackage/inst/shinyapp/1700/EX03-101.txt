@@ -1,0 +1,12 @@
+'City','Stations','Vehicles','Track (miles)'
+'Atlanta',38,252,193
+'Baltimore',14,100,34
+'Boston',53,408,108
+'Chicago',144,1190,288
+'Cleveland',18,60,42
+'Los Angeles',16,102,34
+'Miami',22,136,57
+'New York',468,6333,835
+'Philadelphia',53,371,102
+'San Francisco',43,669,246
+'Washington',86,950,226

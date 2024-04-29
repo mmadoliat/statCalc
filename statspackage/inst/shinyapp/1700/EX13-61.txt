@@ -1,0 +1,11 @@
+'Model','Base Price','Engine Horsepower'
+'Baja Blast',8395,120
+'Bayliner Jazz',8495,90
+'Boston Whaler Rage 15',11495,115
+'Dynasty Jet Storm',8495,90
+'Four Winds Fling',9568,115
+'Regal Rush',9995,90
+'Sea-Doo Speedster',11499,160
+'Sea Ray Sea Rayder',8495,90
+'Seaswirl Squirt',8495,115
+'Suga Sand Mirage',8395,120

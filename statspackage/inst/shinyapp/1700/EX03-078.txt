@@ -1,0 +1,31 @@
+'Team','LEAGUE','W','ERA'
+'New York Mets','NL',89,4.07
+'Minnesota Twins','AL',88,4.16
+'San Diego Padres','NL',63,4.41
+'Chicago White Sox','AL',89,4.06
+'Tampa Bay Rays','AL',97,3.82
+'Milwaukee Brewers','NL',90,3.85
+'Pittsburgh Pirates','NL',67,5.08
+'St. Louis Cardinals','NL',86,4.19
+'Los Angeles Angels','AL',100,3.99
+'Chicago Cubs','NL',97,3.87
+'Philadelphia Phillies','NL',92,3.88
+'Los Angeles Dodgers','NL',84,3.68
+'Toronto Blue Jays','AL',86,3.49
+'Boston Red Sox','AL',95,4.01
+'Colorado Rockies','NL',74,4.77
+'Kansas City Royals','AL',75,4.48
+'Detroit Tigers','AL',74,4.9
+'Cincinnati Reds','NL',74,4.55
+'San Francisco Giants','NL',72,4.38
+'Texas Rangers','AL',79,5.37
+'New York Yankees','AL',89,4.28
+'Atlanta Braves','NL',72,4.46
+'Cleveland Indians','AL',81,4.45
+'Florida Marlins','NL',84,4.43
+'Seattle Mariners','AL',61,4.73
+'Oakland Athletics','AL',75,4.01
+'Arizona Diamondbacks','NL',82,3.98
+'Washington NationalsNL','NL',59,4.66
+'Houston Astros','NL',86,4.36
+'Baltimore Orioles','AL',68,5.13

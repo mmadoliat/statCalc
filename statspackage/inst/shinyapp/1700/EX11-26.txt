@@ -1,0 +1,8 @@
+'Weekday','P(Day)','Observed'
+'Sunday',0.098,10
+'Monday',0.149,6
+'Tuesday',0.166,9
+'Wednesday',0.157,13
+'Thursday',0.16,9
+'Friday',0.159,17
+'Saturday',0.111,11

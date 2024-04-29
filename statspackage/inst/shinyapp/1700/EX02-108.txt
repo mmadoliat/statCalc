@@ -1,0 +1,20 @@
+'Carrier','On-time arrival %'
+'Hawaiian',90.26
+'SkyWest',86.84
+'Pinnacle',86.81
+'Alaska',85.74
+'Southwest',83.66
+'Continental',83.54
+'Northwest',82.88
+'Frontier',81.79
+'ExpressJet',81.65
+'Mesa',81.55
+'United',80.06
+'US Airways',79.24
+'American',77.85
+'Delta',77.4
+'JetBlue',77.25
+'American Eagle',76.76
+'AirTran',75.64
+'Atlantic Southeast',70.84
+'Comair',65.67

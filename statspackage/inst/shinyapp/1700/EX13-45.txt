@@ -1,0 +1,7 @@
+'Player','Points','All Star'
+'George Mikan',22.6,4
+'Bill Russell',15.1,12
+'Wilt Chamberlain',30.1,13
+'Kareem Abdul-Jabbar',24.6,19
+'Hakeem Olajuwon',21.8,12
+'Shaquille O''Neal',16.8,12

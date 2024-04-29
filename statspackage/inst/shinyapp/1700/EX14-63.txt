@@ -1,0 +1,15 @@
+'Airline','Comfort','Service','Web'
+'Midwest',23,22,18
+'Virgin America',23,24,23
+'JetBlue',23,22,22
+'Alaska',17,20,21
+'Hawaiian',16,19,19
+'Continental',15,17,22
+'Southwest',16,21,23
+'Frontier',16,18,16
+'AirTran',14,15,18
+'Delta',13,13,19
+'American',12,13,20
+'United',12,12,19
+'US Airways',11,10,15
+'Spirit',11,10,14

@@ -1,0 +1,3 @@
+'In physical fight','At least once','Never'
+'9th & 10th Grades',3057,5387
+'11th & 12th grades',1942,4798

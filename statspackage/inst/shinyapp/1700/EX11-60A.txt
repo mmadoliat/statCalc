@@ -1,0 +1,7 @@
+'Type of Picture','White-Percent of roles'
+'Action and adventure',13.2
+'Comedy',31.9
+'Drama',23
+'Horror and suspense',12.5
+'Romantic comedy',8.2
+'Other',11.2

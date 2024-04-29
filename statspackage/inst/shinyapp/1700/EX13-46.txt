@@ -1,0 +1,14 @@
+'County','Acres Planted(100 acres)','Production (100 tons)'
+'Waseca',50,353
+'Freeborn',69,365
+'Martin',21,144
+'Dakota',34,187
+'McLeod',20,122
+'Redwood',70,483
+'Dodge',35,245
+'Kandiyohi',37,237
+'Olmsted',86,553
+'Goodhue',45,295
+'Meeker',13,82
+'Nicollet',26,178
+'Sherburne',22,178

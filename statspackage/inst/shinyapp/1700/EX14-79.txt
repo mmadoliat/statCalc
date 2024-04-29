@@ -1,0 +1,17 @@
+'Team, AL','AVG, AL','ERA, AL','Team, NL','AVG, NL','ERA, NL'
+'Baltimore Orioles',0.268,5.15,'Arizona Diamondbacks',0.253,4.42
+'Boston Red Sox',0.27,4.35,'Atlanta Braves',0.263,3.57
+'Chicago White Sox',0.258,4.14,'Chicago Cubs',0.255,3.84
+'Cleveland Indians',0.264,5.06,'Cincinnati Reds',0.247,4.18
+'Detroit Tigers',0.26,4.29,'Colorado Rockies',0.261,4.22
+'Kansas City Royals',0.259,4.83,'Florida Marlins',0.268,4.29
+'Los Angeles Angels',0.285,4.45,'Houston Astros',0.26,4.54
+'Minnesota Twins',0.274,4.5,'Los Angeles Dodgers',0.27,3.41
+'New York Yankees',0.283,4.26,'Milwaukee Brewers',0.263,4.83
+'Oakland Athletics',0.262,4.26,'New York Mets',0.27,4.45
+'Seattle Mariners',0.258,3.87,'Philadelphia Phillies',0.258,4.16
+'Tampa Bay Rays',0.263,4.33,'Pittsburgh Pirates',0.252,4.59
+'Texas Rangers',0.26,4.38,'San Diego Padres',0.242,4.37
+'Toronto Blue Jays',0.266,4.47,'San Francisco Giants',0.257,3.55
+,,,'St. Louis Cardinals',0.263,3.66
+,,,'Washington Nationals',0.258,5

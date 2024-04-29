@@ -1,0 +1,6 @@
+'Name','Score','Price'
+'Ridge Chardonnay Monte Bello 2006',95,57.99
+'Rodney Strong Chardonnay Reserve 2006',94,33.99
+'Chalone Chardonnay 2007',92,22.99
+'Lincourt Chardonnay Santa Rita Hills 2007',91,19.99
+'Rombauer Vineyards Chardonnay Carneros 2007',91,17
