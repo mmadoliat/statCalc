@@ -1,0 +1,11 @@
+'Community College Jobs','% growth','median income'
+'Physical therapist asst.',32.4,41360
+'Dental hygienists',30.1,62800
+'Environmental technicians',28,38090
+'Cardiovascular technicians',25.5,42300
+'Occupational therapist asst.',25.4,42060
+'Radiation therapists',24.8,66170
+'Environmental Eng. Techn.',24.8,40560
+'Court Reporters',24.5,45610
+'Registered Nurses',23.5,57280
+'Computer specialists',15.1,68570

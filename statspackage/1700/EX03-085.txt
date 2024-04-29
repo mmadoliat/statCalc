@@ -1,0 +1,6 @@
+'Breeds','2004','2005'
+'Retrievers (Labrador)',146692,137867
+'Retrievers (Golden)',52550,48509
+'German Shepherd',46046,45014
+'Beagles',44555,42592
+'Dachshunds',40770,38566

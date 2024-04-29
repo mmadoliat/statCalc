@@ -1,0 +1,8 @@
+'Method','Percent','Number'
+'Water',0.43,73
+'Milk',0.15,35
+'Soda',0.07,20
+'Beer',0.07,19
+'Bread',0.19,29
+'Nothing',0.06,13
+'Other',0.03,11

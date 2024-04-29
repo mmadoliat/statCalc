@@ -1,0 +1,4 @@
+'Type of Housing','Number'
+'Owner-occupied housing units',12627
+'Renter-occupied housing units',3803
+'Vacant housing units',539

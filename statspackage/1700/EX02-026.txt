@@ -1,0 +1,16 @@
+'Bank','Growth (%)'
+'NetApp',12
+'Edward Jones',9
+'Boston Consulting Group',10
+'Google',40
+'Wegmans Food Markets',6
+'Cisco Systems',7
+'Genentech',5
+'Methodist Hospital System',1
+'Goldman Sachs',2
+'Nugget Market',22
+'Adobe Systems',9
+'Recreational Equipment',11
+'Devon Energy',11
+'Robert W. Baird',4
+'W.L. Gore & Associates',5

@@ -1,0 +1,33 @@
+'Lake','Area (sq mi)','Max. Depth (ft)'
+'Caspian Sea',143244,3363
+'Superior',31700,1330
+'Victoria',26828,270
+'Aral Sea',24904,220
+'Huron',23000,750
+'Michigan',22300,923
+'Tanganyika',12700,4823
+'Baykal',12162,5315
+'Great Bear',12096,1463
+'Nyasa',11150,2280
+'Great Slave',11031,2015
+'Erie',9910,210
+'Winnipeg',9417,60
+'Ontario',7340,802
+'Balkhash',7115,85
+'Ladoga',6835,738
+'Chad',6300,24
+'Maracaibo',5217,115
+'Onega',3710,328
+'Titicaca',3200,922
+'Nicaragua',3100,230
+'Athabasca',3064,407
+'Reindeer',2568,720
+'Turkana',2473,240
+'Issyk Kul',2355,2303
+'Vanern',2156,328
+'Winnipegosis',2075,38
+'Albert',2075,168
+'Kariba',2050,390
+'Nipigon',1872,540
+'Urmia',1815,49
+'Manitoba',1799,12

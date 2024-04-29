@@ -1,0 +1,7 @@
+'Most holes played in one day','Percent','Number'
+'18',5,12
+'19 to 27',12,35
+'28 to 36',28,60
+'37 to 45',20,44
+'46 to 54',18,35
+'55 or more',17,14

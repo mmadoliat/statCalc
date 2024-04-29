@@ -1,0 +1,25 @@
+'County','State','Percent'
+'St. Bernard Parish','Louisiana',42.9
+'Orleans Parish','Louisiana',13.8
+'Pinal County','Arizona',11.5
+'Kendall County','Illinois',10.6
+'Rockwall County','Texas',8.2
+'Flagler County','Florida',7.2
+'Union County','North Carolina',7.2
+'Forsyth County','Georgia',7.2
+'Paulding County','Georgia',6.7
+'Jackson County','Georgia',6.7
+'Williamson County','Texas',6.4
+'Barrow County','Georgia',6.3
+'Hays County','Texas',6.3
+'Sumter County','Florida',6.1
+'Newton County','Georgia',5.8
+'Lincoln County','South Dakota',5.7
+'Brunswick County','North Carolina',5.5
+'Cherokee County','Georgia',5.3
+'York County','South Carolina',5.2
+'Sandoval County','New Mexico',5.2
+'Franklin County','Washington',5.2
+'Walton County','Georgia',5.1
+'Kaufman County','Texas',5.1
+'Comal County','Texas',5.1

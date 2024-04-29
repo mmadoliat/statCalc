@@ -1,0 +1,13 @@
+'Nation','1999','2003','2007'
+'Bulgaria',518,479,470
+'Cyprus',460,441,452
+'Hong Kong',530,556,530
+'Hungary',552,543,539
+'Iran, Islamic Republic of',448,453,459
+'Japan',550,552,554
+'Korea, Republic of',549,558,553
+'Lithuania',488,519,519
+'Romania',472,470,462
+'Russian Federation',529,514,530
+'Singapore',568,578,567
+'United States',515,527,520

@@ -1,0 +1,14 @@
+'Country','Percentage'
+'Brazil',4.1
+'China',8.4
+'EU',17.9
+'France',3.3
+'Germany',4.2
+'India',2.5
+'Italy',2.8
+'Poland',4.8
+'Russia',3.1
+'S Korea',6.5
+'Turkey',2.9
+'UK',2.8
+'US',19.6

@@ -1,0 +1,6 @@
+'Living Arrangement','Percentage','Number'
+'Parent or guardian''s home',46,484
+'Campus housing',26,230
+'Off-campus rental',18,168
+'Own off-campus housing',9,96
+'Other arrangements',2,22

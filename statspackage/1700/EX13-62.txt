@@ -1,0 +1,8 @@
+'Fast Food','fat calories','cholesterol mg'
+'Big Mac',270,80
+'1/4 lb with cheese',220,95
+'Double Cheeseburger',210,80
+'Whopper with Cheese',420,150
+'Double Whopper w Cheese',580,195
+'Classic Triple with Everything',700,260
+'1/2 lb Bacon Cheddar Double Melt',380,150

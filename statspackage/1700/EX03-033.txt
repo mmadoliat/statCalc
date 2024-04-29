@@ -1,0 +1,6 @@
+'Magazine','Usual rate','Your price'
+'Cosmopolitan',29.97,18
+'Sports Illustrated',89.04,39.95
+'Time',59.95,29.95
+'Rolling Stone',25.94,14.95
+'Martha Stewart Living',28,24

@@ -1,0 +1,7 @@
+'Type of Picture_1','AfroAm-Number of roles'
+'Action and adventure',9
+'Comedy',40
+'Drama',17
+'Horror and suspense',11
+'Romantic comedy',5
+'Other',7

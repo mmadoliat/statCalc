@@ -1,0 +1,18 @@
+'State','Statewide assessment','NAEP assessment'
+'Arkansas',41,13
+'Connecticut',30,32
+'Georgia',62,18
+'Idaho',16,21
+'Kansas',39,30
+'Louisiana',12,14
+'Massachusetts',40,33
+'Michigan',75,29
+'Missouri',37,23
+'New York',65,22
+'North Carolina',84,28
+'North Dakota',15,25
+'Rhode Island',28,23
+'South Carolina',24,18
+'Texas',43,27
+'Vermont',38,29
+'Wyoming',27,25
