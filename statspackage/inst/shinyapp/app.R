@@ -33,7 +33,24 @@ library(heatmaply)
           'input.Panel === "Descriptive Statistics"',
           checkboxInput("i2ndVar", "Include 2nd Variable", value = FALSE),
           uiOutput("var1", width = "300px"), uiOutput("var2", width = "300px"), uiOutput("desFig", width = "300px"), uiOutput("nbin", width = "300px"),
-          uiOutput("quant", width = "300px"), checkboxInput("insumstats", "Include Summary Statistics", value = TRUE)
+          uiOutput("quant", width = "300px"), checkboxInput("insumstats", "Include Summary Statistics", value = TRUE),
+          
+          br(),
+          br(),
+          p(strong("Definitions"),
+          p(strong("Min: "),
+            "the minimum value in the dataset."),
+          p(strong("1st Qu: "),
+            "the first 25% (25th percentile) of the entire dataset"),
+          p(strong("Median: "),
+            "the middle value of the dataset when ordered from least to greatest."),
+          p(strong("Mean: "),
+            "the average value of the dataset."),
+          p(strong("3rd Qu: "),
+            "the first 75% of the entire dataset"),
+          p(strong("Max: "),
+            "the maximum value of the dataset."),
+          )
         ),
         conditionalPanel(
           'input.Panel === "One Sample"',
