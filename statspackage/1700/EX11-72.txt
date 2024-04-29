@@ -1,3 +1,0 @@
-'Methods','n','Rejects'
-'1st Method',320,4
-'2nd Method',992,26

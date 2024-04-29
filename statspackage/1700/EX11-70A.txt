@@ -1,3 +1,0 @@
-'Carried weapon','At least once','Never'
-'9th & 10th Grades',1436,7008
-'11th &  12th Grades',1140,5600
