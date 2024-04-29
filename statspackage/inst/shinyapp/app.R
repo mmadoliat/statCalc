@@ -87,7 +87,7 @@ library(heatmaply)
             p(strong("T-Test (Mean): "),
               "T-test is used to determine if there is a significant difference between 
               the means of two groups and how the groups are related."),
-           )
+           ) # test push
         ),
         conditionalPanel(
           'input.Panel === "KMeans"',
