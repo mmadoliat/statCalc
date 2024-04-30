@@ -82,7 +82,7 @@ shinyUI(
           "the measurement of the difference relative to the variation in the data"),
         p(strong("Pr(>|t|): "),
           "p-value to determine whether to reject the null hypothesis or not.")
-      ), 
+      )
     ),
     mainPanel(
       width = 9, tags$style(type = "text/css", ".shiny-output-error { visibility: hidden; }", ".shiny-output-error:before { visibility: hidden; },"), # ".nav-tabs {font-size: 10px}"),
@@ -127,12 +127,21 @@ shinyUI(
         
         
         tabPanel(
-          title = "Data Quality",
+          title = "Assumptions",
+          
+          br(),
+          br(),
+          "When performing simple or multuple linear regression, a few assumptions must be met.",
+          br(),
+          "This panel provides tests for multicollineariy and heteroskedasticity.",
+          br(),
+          br(),
+
           tabsetPanel(
             tabPanel(
               title = "Column Selection",
               br(),
-              "Select which varibles to test data quality",
+              "Select which (numerical) variables to test data quality",
               br(),
               br(),
               
@@ -154,10 +163,10 @@ shinyUI(
                      tabsetPanel(
                        tabPanel(title = "Correlation Heatmap",
                          br(),
-                         "Correlation heatmap display the degree of collinearity between variables.",
+                         "Correlation heatmaps display the degree of collinearity between variables.",
                          br(),
                          br(),
-                         "Darker colors suggest correlation between the two varibles.",
+                         "Darker colors suggest higher correlation between the two varibles.",
                          br(),
                          br(),
                          plotlyOutput("heatmap_plot")
@@ -176,7 +185,7 @@ shinyUI(
                              "y = x1 + x2 + ... xi + c",
                              br(),
                              br(),
-                             "The first variable should be one of the independent varibles. Any combination of the remaining inpedent variable can be used for the second portion."
+                             "then the first variable should be one of the independent varibles. Any combination of the remaining indepedent variable can be used for the second portion."
                            ),
                            mainPanel(
                              br(),
@@ -205,7 +214,7 @@ shinyUI(
                        )
                      )
             ),
-            tabPanel(title = "Spread",
+            tabPanel(title = "Error Variance",
               br(),
               div(HTML("Heteroscadsticity exists when the variance of the error term is <em>not</em> constant, which is a violation of classical assumptions.")),
               br(),
