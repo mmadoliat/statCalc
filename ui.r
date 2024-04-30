@@ -24,7 +24,23 @@ shinyUI(
         'input.Panel === "Descriptive Statistics"',
         checkboxInput("i2ndVar", "Include 2nd Variable", value = FALSE),
         uiOutput("var1", width = "300px"), uiOutput("var2", width = "300px"), uiOutput("desFig", width = "300px"), uiOutput("nbin", width = "300px"),
-        uiOutput("quant", width = "300px"), checkboxInput("insumstats", "Include Summary Statistics", value = TRUE)
+        uiOutput("quant", width = "300px"), checkboxInput("insumstats", "Include Summary Statistics", value = TRUE),
+        br(),
+        br(),
+        p(strong("Definitions"),
+          p(strong("Min: "),
+            "the minimum value in the dataset."),
+          p(strong("1st Qu: "),
+            "the first 25% (25th percentile) of the entire dataset"),
+          p(strong("Median: "),
+            "the middle value of the dataset when ordered from least to greatest."),
+          p(strong("Mean: "),
+            "the average value of the dataset."),
+          p(strong("3rd Qu: "),
+            "the first 75% of the entire dataset"),
+          p(strong("Max: "),
+            "the maximum value of the dataset."),
+        )
       ),
       conditionalPanel(
         'input.Panel === "One Sample"',
@@ -32,6 +48,13 @@ shinyUI(
         uiOutput("fctpptn", width = "300px"), uiOutput("HT_plts", width = "300px"), uiOutput("confpval", width = "300px"),
         sliderInput("conflev", HTML("Conf. Level (1- &alpha;)"), min = 0.5, max = 0.99, value = 0.95, step = .01, width = "150px"),
         uiOutput("nullhypo", width = "300px"), uiOutput("althypo", width = "300px"),
+        br(),
+        br(),
+        p(strong("Definition"),
+          p(strong("One Sample Test: "),
+            "A one-sample test evaluates whether the mean of a sample differs significantly from a predetermined value."),
+          p("This test assumes that each of the observations in the dataset is independent, and that the sampled population is normally distributed."),
+        )
       ),
       conditionalPanel(
         'input.Panel === "One + Sample"',
@@ -40,6 +63,21 @@ shinyUI(
         sliderInput("conflevp", HTML("Conf. Level (1- &alpha;)"), min = 0.5, max = 0.99, value = 0.95, step = .01, width = "150px"),
         uiOutput("pnullhypo", width = "300px"), uiOutput("palthypo", width = "50px"),
         uiOutput("fctpptn1", width = "300px"), uiOutput("fctpptn2", width = "300px"),
+        br(),
+        br(),
+        p(strong("Available tests"),
+          p(strong("Fisher Test of Independence: "),
+            "Fisher's Test of Independence should be used when there are two nominal variables and 
+              if proportions of one variable are different depending on the value of the other variable. 
+              It is also recommended to use this test when the sample size is small."),
+          p(strong("F-Test: "),
+            "F-test is used to test if the variances of two populations are equal. 
+              This test can be a one-tailed test or two-tailed test, with the two-tailed version 
+              testing against the alternative that the variances are unequal."),
+          p(strong("T-Test (Mean): "),
+            "T-test is used to determine if there is a significant difference between 
+              the means of two groups and how the groups are related."),
+        )
       ),
       conditionalPanel(
         'input.Panel === "KMeans"',
