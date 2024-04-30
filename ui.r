@@ -242,7 +242,7 @@ shinyUI(
                          "What should you do in the case of (multi)collinearity?",
                          br(),
                          br(),
-                         "       - If therory suggests that a varible should be present in the model, the variables can be left alone", 
+                         "       - If theory suggests that a variable should be present in the model, the variables can be left alone", 
                          br(),
                          br(),
                          "       - One varbiable can be dropped, so long as thoery suggests both are not necessary",
