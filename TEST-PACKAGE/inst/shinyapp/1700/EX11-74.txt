@@ -1,0 +1,7 @@
+'Injury','Girls','Boys'
+'Ankle/foot',360,383
+'Hip/thigh/leg',166,147
+'Knee',130,103
+'Forearm/wrist/hand',112,115
+'Face/scalp',88,122
+'All others',144,130

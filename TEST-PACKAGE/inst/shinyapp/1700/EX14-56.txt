@@ -1,0 +1,11 @@
+'Component of Job Satisfaction','Worker Ranking','Boss Ranking'
+'Full appreciation of work done',1,8
+'Feeling of being in on things',2,10
+'Sympathetic help on personal problems',3,9
+'Job Security',4,2
+'Good wages',5,1
+'Interesting work',6,5
+'Promotion and growth in the organization',7,3
+'Personal loyalty to employees',8,6
+'Good working conditions',9,4
+'Tactful discipling',10,7

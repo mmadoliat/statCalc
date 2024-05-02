@@ -1,0 +1,16 @@
+'Feature','Desirable','Essential'
+'Laundry room',40,52
+'Linen closet',56,32
+'Exhaust fan',44,42
+'Dining room',43,36
+'Walk-in pantry',59,19
+'Island work area',55,16
+'Separate shower enclosure',49,20
+'Temperature control faucets',49,18
+'Whirlpool tub',46,12
+'White bathroom fixtures',40,16
+'Ceramic wall tiles',43,12
+'Solid-surface countertops',48,7
+'Den/library',43,11
+'Wood burning fireplace',39,15
+'Special use storage',47,6

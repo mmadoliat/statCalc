@@ -1,0 +1,52 @@
+'State','Commute Time'
+'Alabama',24.1
+'Alaska',18
+'Arizona',25.1
+'Arkansas',21
+'California',27.3
+'Colorado',24.2
+'Connecticut',24.6
+'Delaware',24
+'District of Columbia',30.1
+'Florida',25.9
+'Georgia',27.1
+'Hawaii',26.4
+'Idaho',20.5
+'Illinois',28.2
+'Indiana',22.7
+'Iowa',18.3
+'Kansas',18.8
+'Kentucky',22.2
+'Louisiana',24.9
+'Maine',22.7
+'Maryland',31.1
+'Massachusetts',27.4
+'Michigan',23.9
+'Minnesota',22.3
+'Mississippi',23.9
+'Missouri',23.5
+'Montana',17.6
+'Nebraska',17.6
+'Nevada',23.5
+'New Hampshire',25.3
+'New Jersey',29.8
+'New Mexico',21.5
+'New York',31.5
+'North Carolina',23.3
+'North Dakota',16.1
+'Ohio',22.8
+'Oklahoma',20.6
+'Oregon',22.1
+'Pennsylvania',25.4
+'Rhode Island',23
+'South Carolina',23.2
+'South Dakota',16.3
+'Tennessee',23.8
+'Texas',25
+'Utah',21.4
+'Vermont',21.2
+'Virginia',26.8
+'Washington',25.9
+'West Virginia',25.5
+'Wisconsin',21.4
+'Wyoming',18.6

@@ -1,0 +1,8 @@
+'Most Valuable Step','Percent','Number'
+'1. Establish goals',30,10
+'2. Pay yourself first',21,13
+'3. Create and stick to a budget',17,13
+'4. Save on a regular basis',12,8
+'5. Pay down credit card debt',7,9
+'6. Invest the maximum in 401(k)',5,3
+'7. Other',8,4

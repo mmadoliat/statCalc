@@ -18,7 +18,7 @@ library(shinythemes)
 library(bslib)
 library(heatmaply)
 
-  ui <- fluidPage(
+ui <- fluidPage(
     shinythemes::themeSelector(), # R SHINY THEME #
     titlePanel("JAMM - Stat Calculator"),
     sidebarLayout(
@@ -284,7 +284,10 @@ library(heatmaply)
     )
   )
 
-  server <-function(input, output, clientData, session) {
+
+
+## SERVER FUNCTIONALITY ##
+server <-function(input, output, clientData, session) {
 
     #### DATA ####
 
@@ -1275,5 +1278,4 @@ library(heatmaply)
 
   }
 
-  shinyApp(ui, server)
-
+shinyApp(ui, server)

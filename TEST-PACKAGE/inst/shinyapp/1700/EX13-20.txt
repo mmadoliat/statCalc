@@ -1,0 +1,6 @@
+'Country','2008 GDP(millions)','2008 Internet use %'
+'Germany',2925,75
+'Spain',1402,62
+'France',2133,67
+'Italy',1827,43
+'Portugal',237.3,8

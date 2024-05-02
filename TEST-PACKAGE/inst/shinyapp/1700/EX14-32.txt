@@ -1,0 +1,14 @@
+'NC County','NC Yield','TX County','TX Yield'
+'Edgecomb',3360,'Donley',3640
+'Hertford',3560,'Terry',3335
+'Northhampton',3700,'Collingsworth',2555
+'Greene',3815,'Cochran',3120
+'Pitt',3530,'Frio',3685
+'Bladen',4265,'Yoakum',3530
+'Robeson',3750,'Bailey',3120
+'Chowan',4000,'Wheeler',2880
+'Halifax',3310,'Hall',3700
+'Nash',3435,'Hockley',3280
+,,'Andrews',3665
+,,'Gaines',3845
+,,'Dawson',3565
