@@ -25,6 +25,7 @@ Imports:
     heatmaply,
     lmtest,
     olsrr,
+    pkgload,
     plyr,
     shiny,
     shinythemes,
