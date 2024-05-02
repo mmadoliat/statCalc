@@ -1,0 +1,6 @@
+'Issues','Percent'
+'Making better money-management choices',52
+'Strengthening family relationships',18
+'Protecting the environment',11
+'alancing work and personal life',10
+'Improving nutrition/health',9

@@ -1,0 +1,5 @@
+'Amount of Schooling','Median Usual Weekly Earnings','Years of Schooling'
+'Less than a High School Diploma',453,10
+'High School Graduate, No College',618,12
+'Bachelor’s Degree',1115,16
+'Advanced Degree',1287,18

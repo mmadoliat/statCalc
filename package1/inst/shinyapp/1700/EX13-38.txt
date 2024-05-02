@@ -1,0 +1,10 @@
+'Player, team','PPG, Reg Season','PPG, Post Season'
+'Kobe Bryant',30,30.2
+'LeBron James',28.7,35.3
+'Dwayne Wade',26.9,29.1
+'Dwight Howard',16.8,20.3
+'Chris Paul',19.8,16.6
+'Carlos Boozer',19.3,20.6
+'Jason Kidd',8.3,11.4
+'Carmelo Anthony',30,27.2
+'Deron Williams',19.5,20.2

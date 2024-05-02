@@ -1,0 +1,12 @@
+'Region','County','Yield','Sucrose'
+'NORTHEAST','Dawson',20.9,18.94
+'NORTHEAST','Richland',24.5,19.67
+'NORTHEAST','Roosevelt',21,19.25
+'SOUTH CENTRAL','Big Horn',29.7,16.41
+'SOUTH CENTRAL','Carbon',22.7,16.56
+'SOUTH CENTRAL','Treasure',29.4,17.07
+'SOUTH CENTRAL','Yellowstone',25.9,16.71
+'SOUTH CENTRAL','Other',27.4,16.35
+'SOUTHEAST','Custer',21.8,18.96
+'SOUTHEAST','Prairie',22.2,19.58
+'SOUTHEAST','Rosebud',31.3,17.1

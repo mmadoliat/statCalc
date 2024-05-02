@@ -1,0 +1,17 @@
+'State','Male','Female'
+'Delaware',50,44
+'Nevada',231,213
+'Alabama',190,197
+'Michigan',1296,1296
+'South Carolina',203,220
+'Iowa',512,472
+'Georgia',660,586
+'Vermont',90,74
+'Wyoming',27,30
+'New Jersey',689,636
+'Arkansas',178,217
+'Idaho',580,603
+'Hawaii',202,195
+'Washington',586,610
+'Tennessee',497,497
+'Alaska',112,100

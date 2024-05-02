@@ -1,0 +1,17 @@
+'Manu','Model','Petro','Tons'
+'Buick','Enclave',18,9.6
+'Chevrolet','Trailblazer',21.4,11.4
+'Chrysler','Aspen',22.8,12.2
+'Dodge','Durango',22.8,12.2
+'Ford','Escape',17.1,9.2
+'GMC','Envoy',21.4,11.4
+'Honda','Pilot',19,10.2
+'Jeep','Grd Cherokee',20.1,10.8
+'Kia','Sportage',17.1,9.2
+'Lexus','RX 350',18,9.6
+'Lincoln','MKX',18,9.6
+'Mazda','CX-7',19,10.2
+'Mercury','Mountaineer',22.8,12.2
+'Mitsubishi','Outlander',18,9.6
+'Nissan','Murano',17.1,9.2
+'Toyota','RAV4',16.3,8.7

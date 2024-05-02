@@ -1,0 +1,9 @@
+'Type of Operation','Number of Cases'
+'Thoracic',20
+'Bones and joints',45
+'Eye, ear, nose, and throat',58
+'General',98
+'Abdominal',115
+'Urologic',74
+'Proctologic',65
+'Neurosurgery',23

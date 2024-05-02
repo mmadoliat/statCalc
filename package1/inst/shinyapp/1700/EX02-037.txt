@@ -1,0 +1,10 @@
+'Rooms','Housing Units'
+'1 room',403
+'2 rooms',485
+'3 rooms',2171
+'4 rooms',8108
+'5 rooms',12177
+'6 rooms',11251
+'7 rooms',6250
+'8 rooms',4320
+'9+ rooms',3357

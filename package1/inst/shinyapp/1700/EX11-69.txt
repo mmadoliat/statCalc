@@ -1,0 +1,4 @@
+'C1-T','20 - 35','36 - 50','over 50'
+'Conservative',20,40,20
+'Moderate',80,85,45
+'Liberal',40,25,45

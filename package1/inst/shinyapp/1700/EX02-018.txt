@@ -1,0 +1,9 @@
+'Category','Hours'
+'Sleeping',8.3
+'Leisure and sports',3.9
+'Educational activities',3.2
+'Working and related activities',3
+'Eating and drinking',1
+'Traveling',1.5
+'Grooming',0.8
+'Other',2.3

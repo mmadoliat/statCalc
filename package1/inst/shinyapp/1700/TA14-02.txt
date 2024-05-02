@@ -1,0 +1,19 @@
+'Person','Before','After'
+'Mrs. Smith',146,142
+'Mr. Brown',175,178
+'Mrs. White',150,147
+'Mr. Collins',190,187
+'Mr. Gray',220,212
+'Ms. Collins',157,160
+'Mrs. Allen',136,135
+'Mrs. Noss',146,138
+'Ms. Wagner',128,132
+'Mr. Carroll',187,187
+'Mrs. Black',172,171
+'Mrs. McDonald',138,135
+'Ms. Henry',150,151
+'Ms. Greene',124,126
+'Mr. Tyler',210,208
+'Mrs. Williams',148,148
+'Mrs. Moore',141,138
+'Mrs. Sweeney',164,159

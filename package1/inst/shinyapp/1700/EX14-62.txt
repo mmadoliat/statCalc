@@ -1,0 +1,32 @@
+'Rank','January 1 -  October 31, 2008','%','Rank_1','January 1 -  October 31, 2009','%_1'
+1,'Salt Lake City, UT (SLC)',84.43,1,'Salt Lake City, UT (SLC)',85.63
+2,'Phoenix, AZ (PHX)',81.4,2,'Chicago, IL (MDW)',84.15
+3,'Chicago, IL (MDW)',81.33,3,'Phoenix, AZ (PHX)',83.65
+4,'Baltimore, MD (BWI)',80.49,4,'Houston, TX (IAH)',83.41
+5,'Detroit, MI (DTW)',80.45,5,'Baltimore, MD (BWI)',82.75
+6,'Minneapolis/St. Paul, MN (MSP)',79.78,6,'Portland, OR (PDX)',82.68
+7,'Cincinnati, OH (CVG)',79.47,7,'Los Angeles, CA (LAX)',82.56
+8,'Las Vegas, NV (LAS)',78.98,8,'Las Vegas, NV (LAS)',82.56
+9,'Portland, OR (PDX)',78.89,9,'Cincinnati, OH (CVG)',82.07
+10,'Denver, CO (DEN)',78.75,10,'Tampa, FL (TPA)',81.98
+11,'San Diego, CA (SAN)',78.71,11,'Detroit, MI (DTW)',81.79
+12,'Houston, TX (IAH)',78.41,12,'St. Louis, MO (STL)',81.75
+13,'Charlotte, NC (CLT)',78.19,13,'San Diego, CA (SAN)',81.54
+14,'Tampa, FL (TPA)',78.12,14,'Seattle, WA (SEA)',81.45
+15,'Washington, DC (DCA)',77.95,15,'Orlando, FL (MCO)',81.41
+16,'Orlando, FL (MCO)',77.91,16,'Washington, DC (IAD)',81.15
+17,'St. Louis, MO (STL)',77.22,17,'Denver, CO (DEN)',80.28
+18,'Los Angeles, CA (LAX)',76.92,18,'Washington, DC (DCA)',80.27
+19,'Seattle, WA (SEA)',76.81,19,'Charlotte, NC (CLT)',80.08
+20,'Atlanta, GA (ATL)',76.73,20,'Chicago, IL (ORD)',79.61
+21,'Fort Lauderdale, FL (FLL)',75.54,21,'Dallas/Ft.Worth, TX (DFW)',78.72
+22,'Dallas/Ft.Worth, TX (DFW)',75.36,22,'Fort Lauderdale, FL (FLL)',78.67
+23,'Philadelphia, PA (PHL)',74,23,'Minneapolis/St. Paul, MN (MSP)',78.2
+24,'Boston, MA (BOS)',73.75,24,'Boston, MA (BOS)',75.8
+25,'Washington, DC (IAD)',73.51,25,'Miami, FL (MIA)',75.7
+26,'Miami, FL (MIA)',70.43,26,'Philadelphia, PA (PHL)',74.33
+27,'San Francisco, CA (SFO)',69.41,27,'New York, NY (JFK)',72.44
+28,'New York, NY (JFK)',68.61,28,'San Francisco, CA (SFO)',72.44
+29,'Chicago, IL (ORD)',67.51,29,'Atlanta, GA (ATL)',72.25
+30,'Newark, NJ (EWR)',62.92,30,'New York, NY (LGA)',67.48
+31,'New York, NY (LGA)',61.64,31,'Newark, NJ (EWR)',64.97

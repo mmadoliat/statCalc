@@ -1,0 +1,11 @@
+'Sports Drink','Cost / serv','Energy / serv','Carbs / serv'
+'Lucozade Sport RTD 330ml pouch/can',72,92,21.1
+'Lucozade Sport RTD 500ml bottle',79,140,32
+'Lucozade Sport RTD 650ml sports bottle',119,182,41.6
+'Powerade 500ml bottle',119,120,30
+'Gatorade Sports 750ml',89,188,45
+'Science in Sport Go Electrolyte (500ml)',99,160,40
+'High Five Isotonic electrolyte drink (60g sachet makes 750ml)',99,220,55
+'Isostar powder (per litre) 5l tub',126,320,77
+'Isostar RTD 500ml bottle',99,150,35
+'Maxim Electrolyte (per litre) 2kg bag',66,296,75
