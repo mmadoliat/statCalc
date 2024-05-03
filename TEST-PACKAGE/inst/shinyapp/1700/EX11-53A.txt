@@ -1,3 +1,0 @@
-'Gender A','10 mg drug A','20 mg drug A','placebo A'
-'Female',54,56,60
-'Male',32,27,26
